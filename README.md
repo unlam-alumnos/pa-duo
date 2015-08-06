@@ -1,2 +1,1 @@
-# pa-lab
-Programación Avanzada - Laboratorio
+# Programación Avanzada - Laboratorio
