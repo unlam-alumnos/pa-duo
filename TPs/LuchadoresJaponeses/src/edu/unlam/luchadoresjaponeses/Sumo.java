@@ -1,6 +1,6 @@
 package edu.unlam.luchadoresjaponeses;
 
-public class Sumo implements Comparable<Sumo>{
+public class Sumo implements Comparable<Sumo> {
 
 	private int peso;
 	private int altura;
@@ -65,21 +65,33 @@ public class Sumo implements Comparable<Sumo>{
 	public int compareTo(Sumo sumo) {
 		boolean superaEnAltura = this.altura > sumo.altura;
 		boolean superaEnPeso = this.peso > sumo.peso;
-		
-		if(superaEnAltura && superaEnPeso){
+		boolean igualaEnAltura = this.altura == sumo.altura;
+		boolean igualaEnPeso = this.peso == sumo.peso;
+
+		if (superaEnPeso && superaEnAltura) {
 			return 1;
-		}else if( (superaEnAltura && !superaEnPeso) || (superaEnPeso && !superaEnAltura) ){
+		} else if (superaEnPeso && igualaEnAltura) {
+			return 1;
+		} else if (superaEnAltura && igualaEnPeso) {
+			return 1;
+		} else if ((superaEnAltura && !superaEnPeso)
+				|| (superaEnPeso && !superaEnAltura)) {
 			return 0;
-		}else if(!superaEnAltura && !superaEnPeso){
+		} else {
 			return -1;
-		}else{
-			// Lo supera en peso o altura, y el otro es igual
-			return 1;
 		}
+
+		/*
+		 * if(superaEnAltura && superaEnPeso){ return 1; }else if(
+		 * (superaEnAltura && !superaEnPeso) || (superaEnPeso &&
+		 * !superaEnAltura) ){ return 0; }else if(!superaEnAltura &&
+		 * !superaEnPeso){ return -1; }else{ 
+		 * otro es igual return 1; }
+		 */
 	}
 
 	public void addVictima() {
 		this.victimas++;
 	}
-	
+
 }
