@@ -4,14 +4,12 @@ import java.io.*;
 
 public class IOUtils {
 
-	public static String[] readLines(String pathFile) {
-		File archivo = null;
+	public static String[] readLines(File archivo) {
 		FileReader fr = null;
 		BufferedReader br = null;
 		String[] lines = null;
 
 		try {
-			archivo = new File(pathFile);
 			fr = new FileReader(archivo);
 			br = new BufferedReader(fr);
 
@@ -39,12 +37,12 @@ public class IOUtils {
 		return lines;
 	}
 
-	public static void writeLines(String pathFile, String[] array) {
+	public static void writeLines(File archivo, String[] array) {
 		FileWriter fichero = null;
 		PrintWriter pw = null;
 		
 		try {
-			fichero = new FileWriter(pathFile);
+			fichero = new FileWriter(archivo);
 			pw = new PrintWriter(fichero);
 
 			for (int i = 0; i < array.length; i++) {

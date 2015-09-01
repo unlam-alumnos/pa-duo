@@ -1,4 +1,4 @@
-package edu.unlam.luchadoresjaponeses;
+package edu.unlam.luchadoresjaponeses.model;
 
 public class Sumo implements Comparable<Sumo> {
 
