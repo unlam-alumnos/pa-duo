@@ -80,14 +80,6 @@ public class Sumo implements Comparable<Sumo> {
 		} else {
 			return -1;
 		}
-
-		/*
-		 * if(superaEnAltura && superaEnPeso){ return 1; }else if(
-		 * (superaEnAltura && !superaEnPeso) || (superaEnPeso &&
-		 * !superaEnAltura) ){ return 0; }else if(!superaEnAltura &&
-		 * !superaEnPeso){ return -1; }else{ 
-		 * otro es igual return 1; }
-		 */
 	}
 
 	public void addVictima() {
