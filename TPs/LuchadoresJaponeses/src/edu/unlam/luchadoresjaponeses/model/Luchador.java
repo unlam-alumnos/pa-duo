@@ -1,12 +1,11 @@
 package edu.unlam.luchadoresjaponeses.model;
 
-public class Sumo implements Comparable<Sumo> {
-
+public class Luchador {
 	private int peso;
 	private int altura;
 	private int victimas;
 
-	public Sumo(int peso, int altura) {
+	public Luchador(int peso, int altura) {
 		super();
 		this.peso = peso;
 		this.altura = altura;
@@ -53,7 +52,7 @@ public class Sumo implements Comparable<Sumo> {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Sumo other = (Sumo) obj;
+		Luchador other = (Luchador) obj;
 		if (altura != other.altura)
 			return false;
 		if (peso != other.peso)
@@ -61,8 +60,7 @@ public class Sumo implements Comparable<Sumo> {
 		return true;
 	}
 
-	@Override
-	public int compareTo(Sumo sumo) {
+	public int domina(Luchador sumo) {
 		boolean superaEnAltura = this.altura > sumo.altura;
 		boolean superaEnPeso = this.peso > sumo.peso;
 		boolean igualaEnAltura = this.altura == sumo.altura;
@@ -85,5 +83,4 @@ public class Sumo implements Comparable<Sumo> {
 	public void addVictima() {
 		this.victimas++;
 	}
-
 }

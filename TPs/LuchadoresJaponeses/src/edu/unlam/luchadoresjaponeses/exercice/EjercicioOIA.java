@@ -1,4 +1,4 @@
-package edu.unlam.luchadoresjaponeses;
+package edu.unlam.luchadoresjaponeses.exercice;
 
 import java.io.File;
 
