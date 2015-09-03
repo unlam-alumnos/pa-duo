@@ -1,4 +1,0 @@
-00 - Unica letra ganadora
-01 - Empate
-02 - Palabra de unica letra
-03 - N palabras iguales
