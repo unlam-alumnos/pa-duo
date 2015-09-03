@@ -1,1 +1,0 @@
-3 - Verificar las descripciones de las pruebas. Incluir las cosas que no tienen que pasar, como por ejemplo que no se tome en cuenta a la que perdió en el caso de arriba.

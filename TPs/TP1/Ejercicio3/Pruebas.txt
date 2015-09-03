@@ -1,8 +1,0 @@
-00 - Enunciado ; se puede
-01 - No se puede
-02 - Entra la casa, pero no la puerta
-03 - Fatiga
-
-
-
-*salidas multiples, puedo dar datos de entrada pero no de salida. Debo hacer PP. PP comprueba salidas positivas no negativas.
