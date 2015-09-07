@@ -69,7 +69,7 @@ public class VectorMath {
 		for (int f = 0; f < mat.getFilas(); f++) {
 			double acum = 0;
 			for (int c = 0; c < mat.getColumnas(); c++) {
-				acum += this.coord[c] * mat.getMatriz()[f][c];
+				acum += this.coord[c] * mat.getCoordMatriz(f,c);
 			}			
 			aux.coord[f] = acum;
 		}

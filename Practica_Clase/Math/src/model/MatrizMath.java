@@ -166,4 +166,8 @@ public class MatrizMath {
 	public double[][] getMatriz() {
 		return matriz;
 	}
+
+	public double getCoordMatriz(int f, int c) {
+		return matriz[f][c];
+	}
 }
