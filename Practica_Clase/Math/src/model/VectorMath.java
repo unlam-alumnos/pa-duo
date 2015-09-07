@@ -60,6 +60,22 @@ public class VectorMath {
 		}
 		return aux;
 	}
+	
+	public VectorMath multiplicar(MatrizMath mat) {
+		if (dim != mat.getColumnas())
+			throw new DistDimException(" Distinta Dimension ");
+		
+		VectorMath aux = new VectorMath(dim);
+		for (int f = 0; f < mat.getFilas(); f++) {
+			double acum = 0;
+			for (int c = 0; c < mat.getColumnas(); c++) {
+				acum += this.coord[c] * mat.getMatriz()[f][c];
+			}			
+			aux.coord[f] = acum;
+		}
+		
+		return aux;
+	}
 
 	public VectorMath clone() {
 		VectorMath aux = new VectorMath(dim);
@@ -101,5 +117,13 @@ public class VectorMath {
 				return false;
 		}
 		return true;
+	}
+
+	public int getDim() {
+		return dim;
+	}
+
+	public double[] getCoord() {
+		return coord;
 	}
 }

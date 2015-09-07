@@ -10,6 +10,7 @@ public class MatrizMath {
 	private int columnas;
 	private double[][] matriz;
 	
+
 	public MatrizMath(int filas, int columnas) {
 		super();
 		this.filas = filas;
@@ -82,17 +83,41 @@ public class MatrizMath {
 		}
 		return aux;
 	}
+	
+	public VectorMath multiplicar(VectorMath vec) {
+		if (vec.getDim() != this.columnas)
+			throw new DistDimException(" Distinta Dimension ");
+		
+		return vec.multiplicar(this);
+	}
 
 	public double getDeterminante(){
-		if(this.filas != this.columnas){
-			throw new DistDimException("Debe ser una matriz cuadrada");
+		MatrizMath aux = this.clone();
+		
+        for(int k=0; k<filas-1; k++){
+            for(int i=k+1; i<filas; i++){
+                for(int j=k+1; j<filas; j++){
+                    aux.matriz[i][j]-=aux.matriz[i][k]*aux.matriz[k][j]/aux.matriz[k][k];
+                }
+            }
+        }
+        
+        double determinante = 1.0;
+        for(int i=0; i<filas; i++){
+        	determinante *= aux.matriz[i][i];
+        }
+        return determinante;		
+	}
+	
+	public MatrizMath clone() {
+		MatrizMath aux = new MatrizMath(filas,columnas);
+
+		for (int f = 0; f < filas; f++) {
+			for (int c = 0; c < columnas; c++) {
+				aux.matriz[f][c] = this.matriz[f][c];
+			}
 		}
-		
-		double determinante = 0;
-		
-		// TODO desarrollo del calculo del determinante
-		
-		return determinante;
+		return aux;
 	}
 	
 	@Override
@@ -130,5 +155,15 @@ public class MatrizMath {
 		return true;
 	}
 	
-	
+	public int getFilas() {
+		return filas;
+	}
+
+	public int getColumnas() {
+		return columnas;
+	}
+
+	public double[][] getMatriz() {
+		return matriz;
+	}
 }
