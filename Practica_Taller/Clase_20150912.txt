@@ -1,0 +1,46 @@
+12/09/2015
+*No hay herencia multiple en JAVA --> Interfaz; 
+
+Interfaz
+Contrato que toma la clase que la implementa. 
+Conjunto de firmas de metodos a implementar. Solo su declaracion, no su desarrollo.
+JAVA permite implementar multiples interfaces.
+public interface Corredor {
+	public void correr();
+}
+
+- POLIMORFISMO; capacidad de los objetos, de distinto tipo, de que cada uno responda distinto ante un mismo mensaje.
+
+Pato pato = new Nadador(); // MAL!
+
+Pato pato = new Pato(); // OK
+pato.nadar();
+pato.cuaquear();
+
+// ASIGNACION POLIMORFICA
+Nadador nadador = new Pato(); // OK
+nadador.nadar(); // OK
+nadador.cuaquear(); // MAL!
+
+- Una ENTIDAD es POLIMORFICA siempre y cuando puede implementar el metodo sin importar el tipo especifico del objeto que recibo, pero voy a poder resolverlo de todoas formas.
+
+class Profesor implements Saludador
+class Estudiante implements Saludador
+
+public void llegar(Saludador s1) {
+	//...
+	s1.saludar();
+	//...
+}
+
+- 
+List<Corredor> lita = new LinkenList<Corredor>(); // ASIGNACION POLIMORFICA
+
+lita.add(new Viejita()); // ENTIDAD POLIMORFICA
+lita.add(new Pato()); // ENTIDAD POLIMORFICA
+lita.add(new Caracol()); // ENTIDAD POLIMORFICA
+
+for(Corredor c : lista) {
+	c.correr();  // POLIMORFISMO
+}
+
