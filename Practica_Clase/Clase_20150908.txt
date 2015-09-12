@@ -1,0 +1,69 @@
+08/09/2015
+COMPLEJIDAD COMPUTACIONAL -> O(n^2)
+ESTABLE -> para claves iguales mantenia el orden previo
+SENSIBLE -> variaba el tiempo de ejecucion segun la entrada
+
+SELECCION; 
+Busca el menor y lo lleva adelante del vector
+N = 8
+
+No es sensible, no importa si viene ordenado o no, va a recorrerlo todo
+No es estable, el 8 y el 8' cambian el orden inicial, el 8 estaba primero y en el resultado queda despues
+
+Comparaciones = (SUM ; 1 <= i <= n - 1; N - 1) = N(N - 1)/2
+Intercambios = N - 1
+
+8 15 8' 4 7 -1 12 0
+1ra: -1 15 8' 4 7 8 12 0
+2da: -1 0 8' 4 7 8 12 15
+3ra: -1 0 4 8' 7 8 12 15
+4ta: -1 0 4 7 8' 8 12 15
+5ta: -1 0 4 7 8' 8 12 15
+6ta: -1 0 4 7 8' 8 12 15
+7ta: -1 0 4 7 8' 8 12 15
+
+BURBUJEO:
+Compara de a pares, e intercambia
+
+Es estable, el 8 y 8' mantienen su orden inicial
+Es sensible, varia el tiempo de ejecucion segun la entrada
+
+Comparaciones:  N-1 < comp < N(N - 1)/2
+Intercambios: 	0	< int  < N(N - 1)/2
+
+8 15 8' 4 7 -1 12 0			0
+1ra: 8 15 8' 4 7 -1 0 12	1
+2ra: 8 15 8' 4 7 -1 0 12
+3ra: 8 15 8' 4 -1 7 0 12
+4ra: 8 15 8' -1 4 7 0 12
+5ra: 8 15 -1 8' 4 7 0 12
+6ra: 8 -1 15 8' 4 7 0 12
+7ra: -1 8 15 8' 4 7 0 12
+							0
+1ra: -1 8 15 8' 4 7 0 12	
+2ra: -1 8 15 8' 4 0 7 12	1
+2ra: -1 8 15 8' 0 4 7 12	
+2ra: -1 8 15 0 8' 4 7 12	
+2ra: -1 8 0 15 8' 4 7 12	
+2ra: -1 0 8 15 8' 4 7 12	
+							
+INSERCION:
+Toma el primer elemento del conjunto desordenado, y lo ubica en la posicion correspondiente en el conjunto ordenado
+Empieza a comparar con el ultimo del conjunto ordenado
+https://es.wikipedia.org/wiki/Ordenamiento_por_inserci%C3%B3n
+El desplazamiento tiene menor costo que el intercambio del burbujeo.
+Centinela; me ahorro una comparacion del codigo. Tomo el valor mas chico y lo llevo al inicio del conjunto ordenado. Puedo hacer una pasada de burbujeo, asi aseguro la estabilidad.
+Es estable, el 8 y 8' mantienen su orden inicial
+Es sensible, varia el tiempo de ejecucion segun la entrada
+
+Comparaciones: N-1 < comp < N(N - 1)/2 ; caso aleatorio N(N - 1)/4
+Desplazamiento:  0 < desp < N(N - 1)/2 ; caso aleatorio N(N - 1)/4 
+
+8 | 15 8' 4 7 -1 12 0
+8 15 | 8' 4 7 -1 12 0
+8 8' 15 | 4 7 -1 12 0
+4 8 8' 15 | 7 -1 12 0
+4 7 8 8' 15 | -1 12 0
+-1 4 7 8 8' 15 | 12 0
+-1 4 7 8 8' 12 15 | 0
+0 -1 4 7 8 8' 12 15 |

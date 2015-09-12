@@ -1,0 +1,28 @@
+05/09/2015
+TALLER PROGRA AVANZADA
+
+-SOLID
+
+S - unica responsabilidad
+
+Empresa de transporte. 
+Reparto de paquetes. 
+CAPACIDAD DE LAS COMBIS. 
+MANTENIMIENTO CADA CIERTOS KM.
+
+COMBI
+
+volumen
+peso
+km
+
+addPaquete()
+viaje()
+puedoAddPaquete()
+necesitaMantenimiento()
+
+nafta cara -> entreg en bici
+mantenimiento
+peso maximo
+KM_MAX=100
+PESO_MAX=35
