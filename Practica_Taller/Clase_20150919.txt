@@ -1,0 +1,22 @@
+19/09/2015
+
+COLLECTIONS
+
+LIST (listas)
+ArrayList
+List
+
+SET (conjunto)
+{A,B,C,D}
+unicos, sin orden
+
+MAP (mapa, conjunto asociado a otro)
+6 -> "SEIS"
+4 -> "CUATRO"
+*Array asociativo en JAVA
+
+- hacer tests sobre collections
+1) agregar un elemento a la coleccion
+2) eliminar un elemento de la coleccion
+3) obtener un elemento determinado
+4) mostra la coleccion completa

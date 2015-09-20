@@ -1,2 +1,31 @@
 15/09/2015
 TDD
+
+Ordenamientos No Elementales
+
+SHELL
+Hi = Hi-1 * 3 + 1 --> h = 1,4,13,40
+
+EJEMPLOAORDENAR -->	N = 15 ; H = 13 (el H mas grande que puedo tomar)
+EJEMPLOAORDEN|AR
+1º compara E con A y desplazo H posiciones
+	AJEMPLOAORDEN|ER
+2° compara J con R y lo deja como esta
+3° no hay elementos que disten H, entonces tomo un H mas chico --> H = 4
+	AJEM|PLOA|ORDE|NER
+4° compara la A con la P y no hace nada
+5° compara la P con la O e intercambia
+	AJEM|OLOA|PRDE|NER
+
+Es sensible a la entrada.
+No es estable.
+Complejidad Computacional = O(n^3/2)
+
+QUICKSORT
+No es sensible a la entrada.
+No es estable.
+Complejidad Computacional = O(n Log(n))
+
+*Mejora: la mediana de 3
+*Mejora: eliminar la recursividad
+*Mejora: aplicar otro metodo elemental de ordenamiento cuando el N ya es relativamente bajo
