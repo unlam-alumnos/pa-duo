@@ -1,0 +1,22 @@
+29/09/2015
+
+COLA DE PRIORIDADES
+pri->|3 *|->|1 *|->|4 *|->|2 *|->|1 *|<-ult
+
+Poner Elemento = O(1)
+Sacar Elemento = O(N)
+
+*Si inserto ordenado (No recomendado)
+Poner Elemento = O(N)
+Sacar Elemento = O(1)
+
+*Monticulo 
+- (Arbol binario; el padre siempre es de mayor prioridad que los hijos)
+(Arbol debe ser completo o casi completo)
+Poner Elemento = O(logN)
+Si quito el padre mayor, subo la ultima hoja y empiezo a comparar e intercambiar hasta que corresponda
+- Tambien se pude implementar como un vecto
+Hijo Izquierdo	HI = i x 2
+Hijo Derecho 	HD = i x 2 + 1
+Si quito el padre mayor, quito la posicion 1 y subo la ultima e intercambio hasta que corresponda
+Para calcular el padre de una posicion -> Padre = i/2

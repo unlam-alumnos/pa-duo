@@ -1,0 +1,4 @@
+22/09/2015
+
+Matriz NxM, enteros positivos y negativos
+buscar el subrectangulo con la sumatoria de mayor valor.

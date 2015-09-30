@@ -1,0 +1,25 @@
+HILOS
+
+class Proceso extends Thread {
+
+	public void run() {
+		...
+	}
+
+}
+
+
+class Proceso implement Runnable {
+
+	public void run() {
+		...
+	}
+
+}
+
+
+*usar enum para el Casillero - OK 
+*lista de personajes en el Tablero
+*en que momento evaluamos el choque de los personajes
+*calcular mejor posicion para reivivir
+
