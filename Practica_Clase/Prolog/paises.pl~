@@ -13,6 +13,9 @@ son_translimitrofes(X,Y):-son_limitrofes(X,Z),son_limitrofes(Z,Y),not(son_limitr
 pais_superficie(argentina,2780000).
 pais_superficie(chile,756096).
 pais_superficie(brasil,8516000).
+
+pais_superficie(brasil2,8516000).
+
 pais_superficie(peru,1285000).
 pais_superficie(bolivia,1099000).
 pais_superficie(uruguay,176215).
