@@ -63,7 +63,7 @@ public class Nombres {
 	public void sort(){
 		resultado = new Persona[nombres.size()];
 		Collection<Persona> collectionAux = nombres.values();
-		Iterator itePersona = collectionAux.iterator();
+		Iterator<Persona> itePersona = collectionAux.iterator();
 		
 		int i = 0;
 		while (itePersona.hasNext()) {
