@@ -8,3 +8,4 @@ mujer(flor,bachata,pop).
 hombre_baila(X,Y):-hombre(X,Y,_);hombre(X,_,Y).
 mujer_baila(X,Y):-mujer(X,Y,_);mujer(X,_,Y).
 pareja(X,Y,Z):-hombre_baila(X,Z),mujer_baila(Y,Z),(Z==Z).
+pareja2(A,B,C):-(hombre(A,C,_),mujer(B,C,_));(hombre(A,_,C),mujer(B,_,C));(hombre(A,C,_),mujer(B,_,C));(hombre(A,_,C),mujer(B,C,_)).
