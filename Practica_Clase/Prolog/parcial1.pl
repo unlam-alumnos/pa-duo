@@ -1,0 +1,10 @@
+hombre(gonzalo,salsa,tango).
+hombre(gustavo,tango,bachata).
+hombre(cristian,rock,tango).
+hombre(juan,rock,pop).
+mujer(ana,tango,salsa).
+mujer(maria,rock,salsa).
+mujer(flor,bachata,pop).
+hombre_baila(X,Y):-hombre(X,Y,_);hombre(X,_,Y).
+mujer_baila(X,Y):-mujer(X,Y,_);mujer(X,_,Y).
+pareja(X,Y,Z):-hombre_baila(X,Z),mujer_baila(Y,Z),(Z==Z).

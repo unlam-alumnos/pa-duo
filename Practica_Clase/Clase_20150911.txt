@@ -4,9 +4,7 @@ Cálculo de complejidad
 
 T(n) = C * f(n)
 
-C=> Constante que involucra tiempos de procesamiento, y todo lo no relacionado 
-
-al algoritmo.
+C=> Constante que involucra tiempos de procesamiento, y todo lo no relacionado al algoritmo.
 
 ------------------------------------------------------
 
@@ -24,18 +22,14 @@ que sea de esta complejidad.
 O(log n) => Logaritmico 
 
 Ej: - Poner en árbol (no todos los árboles)
-    - Búsqueda dicotómica o binaria. Al partir siempre por la mitad el array de 
-
-elementos obtengo una complejidad menor que la secuencial.
+    - Búsqueda dicotómica o binaria. Al partir siempre por la mitad el array de elementos obtengo una complejidad menor que la secuencial.
       para 8 elementos -> parto 3 veces
       para 16 elementos -> parto 4 veces
       ... logaritmo en base 2
 
 ------------------------------------------------------
 
-O(n) => Lineal. Tiempo de respuesta dependiendo de la cantidad de elementos en 
-
-la entrada.
+O(n) => Lineal. Tiempo de respuesta dependiendo de la cantidad de elementos en la entrada.
 
 Ej: - Búsqueda secuencial
     - Generalmente todas las búsquedas
@@ -49,9 +43,7 @@ Ej: - Quick sort
 ------------------------------------------------------
 O(n^2) => Cuadrado.
 
-Ej: - Dos for con complejidad n cada uno. Ejercicio de luchadores japoneses 
-
-donde comparo a uno con todos.
+Ej: - Dos for con complejidad n cada uno. Ejercicio de luchadores japoneses donde comparo a uno con todos.
 
 ------------------------------------------------------
 
