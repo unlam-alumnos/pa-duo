@@ -65,7 +65,7 @@ public class Cliente {
 
     public static void main(String args[]) {
 
-        Cliente cliente = new Cliente("localhost", 8888);
+        Cliente cliente = new Cliente("localhost", 8880);
 
         try {
             System.out.println("Ingrese su nombre de usuario: ");

@@ -40,14 +40,14 @@ public class Server {
             server = new ServerSocket(this.port);
 
         } catch (IOException e) {
-            System.out.println("No se puede escuchar desde el puerto elegido, cerrando Servidor...");
+            System.err.println("No se puede escuchar desde el puerto elegido, cerrando Servidor...");
             System.exit(1);
         }
     }
 
     public Socket accept() {
 
-        activeClients++;
+        //
 
         try {
             client = server.accept();
@@ -63,6 +63,7 @@ public class Server {
         }
         System.out.println("Conexion #" + activeClients + " aceptada correctamente.");
         connections.add(client);
+        activeClients++;
         return client;
     }
 
@@ -110,7 +111,7 @@ public class Server {
         Socket socket;
         boolean flag = true;
 
-        server = new Server(8888, 5, 3);
+        server = new Server(8880, 5, 3);
 
         server.printInfo();
 
