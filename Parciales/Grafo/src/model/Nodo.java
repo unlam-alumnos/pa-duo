@@ -6,6 +6,9 @@ public class Nodo implements Comparable<Nodo> {
 	private int grado;
 	private Object data;
 	
+	public Nodo(){
+	}
+	
 	public Nodo(int indice, int color, int grado, Object data) {
 		this.indice = indice;
 		this.color = color;
