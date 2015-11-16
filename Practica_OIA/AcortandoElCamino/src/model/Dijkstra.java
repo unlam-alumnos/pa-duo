@@ -29,7 +29,11 @@ public class Dijkstra extends Grafo {
 			int origen = arista.getNodoOrigen();
 			int destino = arista.getNodoDestino();
 			int costo = arista.getCosto();
-			matrizCostos[origen][destino] = costo;
+			if (matrizCostos[origen][destino] > costo) {
+				matrizCostos[origen][destino] = costo;
+			} else if(matrizCostos[origen][destino] == costo && arista.isLibre()) {
+				matrizCostos[origen][destino] = costo;
+			}
 		}
 	}
 
@@ -52,13 +56,12 @@ public class Dijkstra extends Grafo {
 		return next;
 	}
 
-	private void caminoMasCorto(int nodoOrigen) {
+	private void distanciasMenores(int nodoOrigen) {
 		for (int i = 0; i < nodos.length; i++) {
 			if (nodoOrigen != i) {
 				if (isAdyacentes(nodoOrigen, i)) {
 					if (!vistos[i]) {
-						int acum = distancias[nodoOrigen]
-								+ matrizCostos[nodoOrigen][i];
+						int acum = distancias[nodoOrigen] + matrizCostos[nodoOrigen][i];
 						if (distancias[i] > acum) {
 							distancias[i] = acum;
 							camino[i] = nodoOrigen;
@@ -69,7 +72,7 @@ public class Dijkstra extends Grafo {
 		}
 	}
 
-	protected void resolver() {
+	protected void resolverDijkstra() {
 		int origen = -1;
 		boolean first = true;
 		int nodosVistos = 0;
@@ -85,7 +88,7 @@ public class Dijkstra extends Grafo {
 
 			vistos[origen] = true;
 			nodosVistos++;
-			caminoMasCorto(origen);
+			distanciasMenores(origen);
 		}
 	}
 
@@ -99,14 +102,5 @@ public class Dijkstra extends Grafo {
 
 	public int[] getCamino() {
 		return camino;
-	}
-
-	public static void main(String[] args) {
-		//File in = new File("dijkstra.in");
-		//Dijkstra grafo = new Dijkstra(in);
-		//grafo.resolver();
-		//grafo.mostrarCamino(0, 4);
-		//System.out.println(Arrays.toString(grafo.getDistancias()));
-		//System.out.println(Arrays.toString(grafo.getCamino()));
 	}
 }

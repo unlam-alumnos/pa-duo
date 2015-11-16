@@ -4,9 +4,12 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Camino extends Dijkstra{
+	private int puertaEntrada;
+	private int puertaSalida;
 	private List<Arista> galerias;
 	private int obstruidas;
 	private int largoTotal;
@@ -16,23 +19,23 @@ public class Camino extends Dijkstra{
 		galerias = new ArrayList<Arista>();
 		obstruidas = 0;
 		largoTotal = 0;
+		puertaEntrada = 0;
+		puertaSalida = nodos.length - 1;
 	}
 	
-	private void obtenerGalerias(int origen, int destino) {
-		if (destino < nodos.length && camino[destino] != destino){
-			obtenerGalerias(origen, camino[destino]);
-		}
-		Arista aux = getArista(camino[destino], destino);
-		if (aux != null) {
+	private void armarCamino(int origen, int destino){
+		Arista aux = null;
+		int i = destino;
+		while((aux = getArista(camino[i], i)) != null){
 			galerias.add(aux);
-			System.out.println(aux.getId() + 1 + " ; " + (aux.getNodoOrigen()+1) + " " + (aux.getNodoDestino()+1));
+			i = camino[i];
 		}
 	}
 	
 	public void analizarCamino() {
-		resolver();
-		obtenerGalerias(puertaEntrada, puertaSalida);
-
+		resolverDijkstra();
+		armarCamino(puertaEntrada, puertaSalida);
+		
 		for (Arista galeria : galerias) {
 			if (!galeria.isLibre()) {
 				obstruidas++;
@@ -52,6 +55,8 @@ public class Camino extends Dijkstra{
 			sb = new StringBuffer();
 			
 			sb.append((obstruidas + 1) + " ");
+
+			Collections.sort(galerias);
 			if (obstruidas > 0) {
 				for (Arista galeria : galerias) {
 					if (!galeria.isLibre()) {
@@ -59,6 +64,7 @@ public class Camino extends Dijkstra{
 					}
 				}
 			}
+			
 			sb.append(largoTotal);
 			pw.println(sb.toString());
 		} catch (Exception e) {

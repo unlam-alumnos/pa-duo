@@ -5,8 +5,6 @@ import java.io.File;
 import java.io.FileReader;
 
 public class Grafo {
-	protected int puertaEntrada;
-	protected int puertaSalida;
 	protected MatrizSimetrica matrizAdyacencia;
 	protected int[] nodos;
 	protected Arista[] aristas;
@@ -51,8 +49,6 @@ public class Grafo {
 				int costo = Integer.parseInt(data[2]);
 				aristas[i] = new Arista((i - cantidadAristasOk), origen, destino, costo, false);
 			}
-			puertaEntrada = 0;
-			puertaSalida = nodos.length - 1;
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {

@@ -37,9 +37,9 @@ public class Arista implements Comparable<Arista> {
 
 	@Override
 	public int compareTo(Arista otro) {
-		if (this.costo < otro.getCosto()) {
+		if (this.id < otro.getId()) {
 			return -1;
-		} else if (this.costo > otro.getCosto()) {
+		} else if (this.id > otro.getId()) {
 			return 1;
 		} else {
 			return 0;
