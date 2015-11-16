@@ -76,7 +76,7 @@ public class Dijkstra extends Grafo{
 		}
 		return next;
 	}
-
+	
 	public void resolver(){
 		Nodo origen = null;
 		boolean first = true;
@@ -85,6 +85,7 @@ public class Dijkstra extends Grafo{
 			if (first) {
 				origen = nodos[0];
 				distancias[0] = 0;
+				camino[0] = 0;
 				first = false;
 			}else{
 				origen = nextMenor(origen);
@@ -94,6 +95,12 @@ public class Dijkstra extends Grafo{
 			nodosVistos++;
 			caminoMasCorto(origen);
 		}	
+	}
+	
+	public void mostrarCamino(int vertice){
+		System.out.print(vertice+1+" <- ");
+		if(vertice < nodos.length && camino[vertice] != vertice)
+			mostrarCamino(camino[vertice]);
 	}
 
 	public int[] getDistancias() {
@@ -115,7 +122,10 @@ public class Dijkstra extends Grafo{
 	public static void main(String[] args) {
 		Dijkstra grafo = new Dijkstra("dijkstra.in");
 		grafo.resolver();
+		grafo.mostrarCamino(5);
+		/*
 		System.out.println(Arrays.toString(grafo.getDistancias()));
 		System.out.println(Arrays.toString(grafo.getCamino()));
+		*/
 	}
 }
