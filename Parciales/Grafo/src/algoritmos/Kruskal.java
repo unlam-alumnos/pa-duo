@@ -11,12 +11,10 @@ import model.Nodo;
  * */
 public class Kruskal extends Grafo{
 	private int[] representantes;
-	private int costoTotal;
 		
 	public Kruskal(int cantidadNodos) {
 		super(cantidadNodos);
 		representantes = new int[cantidadNodos];
-		costoTotal = cantidadNodos - 1;
 	}
 	
 	public Kruskal(String in){
@@ -52,8 +50,7 @@ public class Kruskal extends Grafo{
 	
 	public void resolver(){
 		Collections.sort(aristas);
-		int costoActual;
-		
+				
 		for (Arista arista : aristas) {
 			if ( find(arista.getOrigen()) != find(arista.getDestino())) {
 				union(arista.getOrigen(), arista.getDestino());
